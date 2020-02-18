@@ -5,7 +5,7 @@ This repository contains the StackState SAP StackPack. The code is distributed u
 ## Introduction
 
 The SAP StackPack connects SAP to StackState, allowing you to monitor your SAP instance(s). You can find the
-[capabilities of the StackPack](sap/src/main/resources/overview.md) and the [configuration instructions](sap/src/main/resources/detailed-overview.md) in this repository.
+[capabilities of the StackPack](sap/src/main/stackpack/resources/overview.md) and the [configuration instructions](sap/src/main/stackpack/resources/detailed-overview.md) in this repository.
 
 ## Documentation
 
