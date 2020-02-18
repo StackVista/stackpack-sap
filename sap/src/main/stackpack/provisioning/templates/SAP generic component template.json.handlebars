@@ -1,0 +1,134 @@
+{
+  "_type": "Component",
+  "checks": [
+      \{{#if element.data.checks\}}
+      \{{# join element.data.checks "," \}}
+      \{{# if isSapCheck\}}
+      {
+            "_type": "Check",
+            "name": "\{{ name \}}",
+            "syncCreated": false,
+            "function": \{{ get "urn:stackpack:sap:shared:check-function:sap-health-state-function" \}},
+            "arguments": [
+                {
+                  "_type": "ArgumentEventStreamRef",
+                  "parameter": \{{ get "urn:stackpack:sap:shared:check-function:sap-health-state-function" "Type=Parameter;Name=events" \}},
+                  "stream": \{{ streamId \}}
+                }
+            ]
+      }
+      \{{/if\}}
+      \{{# if isBGCheck \}}
+      {
+            "_type": "Check",
+            "name": "\{{ name \}}",
+            "syncCreated": false,
+            "function": \{{ get "urn:stackpack:common:check-function:metrics-minimum-last-value" \}},
+            "arguments": [
+                {
+                  "_type": "ArgumentMetricStreamRef",
+                  "parameter": \{{ get "urn:stackpack:common:check-function:metrics-minimum-last-value" "Type=Parameter;Name=metrics" \}},
+                  "maxWindow": 10000,
+                  "windowingMethod": "SLIDING",
+                  "downsamplingMethod": "MIN",
+                  "stream": \{{ streamId \}}
+                },
+                {
+					"_type": "ArgumentDoubleVal",
+					"parameter": \{{ get "urn:stackpack:common:check-function:metrics-minimum-last-value" "Type=Parameter;Name=criticalValue" \}},
+					"value": 0
+				},
+				{
+					"_type": "ArgumentDoubleVal",
+					"parameter": \{{ get "urn:stackpack:common:check-function:metrics-minimum-last-value" "Type=Parameter;Name=deviatingValue" \}},
+					"value": 0
+				}
+            ]
+      }
+      \{{/if\}}
+      \{{# if isDIACheck \}}
+      {
+            "_type": "Check",
+            "name": "\{{ name \}}",
+            "syncCreated": false,
+            "function": \{{ get "urn:stackpack:common:check-function:metrics-minimum-last-value" \}},
+            "arguments": [
+                {
+                  "_type": "ArgumentMetricStreamRef",
+                  "parameter": \{{ get "urn:stackpack:common:check-function:metrics-minimum-last-value" "Type=Parameter;Name=metrics" \}},
+                  "maxWindow": 10000,
+                  "windowingMethod": "SLIDING",
+                  "downsamplingMethod": "MIN",
+                  "stream": \{{ streamId \}}
+                },
+                {
+					"_type": "ArgumentDoubleVal",
+					"parameter": \{{ get "urn:stackpack:common:check-function:metrics-minimum-last-value" "Type=Parameter;Name=criticalValue" \}},
+					"value": 0
+				},
+				{
+					"_type": "ArgumentDoubleVal",
+					"parameter": \{{ get "urn:stackpack:common:check-function:metrics-minimum-last-value" "Type=Parameter;Name=deviatingValue" \}},
+					"value": 0
+				}
+            ]
+      }
+      \{{/if\}}
+    \{{/ join \}}
+    \{{/if\}}
+    ],
+  "streams": [
+        \{{#if element.data.streams\}}
+        \{{# join element.data.streams "," \}}
+            {
+                "_type": "\{{#if streamType \}}\{{ streamType \}}\{{else\}}EventStream\{{/if\}}",
+                "name": "\{{ name \}}",
+                "query": {
+                    "conditions": [
+                        \{{# join conditions "," \}}
+                            {
+                                "key": "\{{ key \}}",
+                                "value": "\{{ value \}}"
+                            }
+                        \{{/ join \}}
+                    ],
+                    "_type": "\{{#if queryType \}}\{{ queryType \}}\{{else\}}EventTelemetryQuery\{{/if\}}",
+                    "aggregation": "\{{#if aggregation \}}\{{ aggregation \}}\{{else\}}EVENT_COUNT\{{/if\}}",
+                    "metricField": "\{{#if metric \}}\{{ metric \}}\{{else\}}value\{{/if\}}"
+                },
+                "dataSource": \{{ get dataSource \}},
+                "dataType": "\{{#if dataType \}}\{{ dataType \}}\{{else\}}EVENTS\{{/if\}}",
+                "syncCreated": false,
+                "id": \{{ id \}}
+            }
+        \{{/ join \}}
+        \{{/if \}}
+  ],
+  "labels": [
+    \{{#if element.data.labels\}}
+    \{{# join element.data.labels ","\}}
+        {
+          "_type": "Label",
+          "name": "\{{ this \}}"
+        }
+    \{{/ join \}}
+    \{{/if\}}
+    \{{#if element.data.tags\}}
+    \{{# join element.data.tags "," ","\}}
+    {
+      "_type": "Label",
+      "name": "\{{key\}}:\{{this\}}"
+    }
+    \{{/ join \}}
+    \{{/if\}}
+    ],
+  "name": "\{{#if element.data.name\}}\{{ element.data.name \}}\{{else\}}\{{ element.externalId \}}\{{/if\}}",
+\{{#if element.data.description\}}"description": "\{{ element.data.description \}}",\{{/if\}}
+  "type" : \{{ getOrCreate (identifier "urn:stackpack:sap:shared" "ComponentType" element.type.name ) (identifier "urn:system:auto" "ComponentType" "sap-generic-resource") "Type=ComponentType;Name=SAP generic resource" \}},
+  "version": "\{{ element.data.version \}}",
+  "layer" : \{{ get element.data.layer \}},
+  "domain": \{{ get "urn:stackpack:sap:shared:domain:sap-{{instanceName}}" \}},
+  "environments": [
+    \{{ get "urn:stackpack:common:environment:production" \}}
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "nodes": [
+    {
+      "_type": "CheckFunction",
+      "id": -900,
+      "name": "Event SAP health state conversion",
+      "identifier": "urn:stackpack:sap:shared:check-function:sap-health-state-function",
+      "parameters": [
+        {
+          "_type": "Parameter",
+          "id": -901,
+          "multiple": false,
+          "name": "events",
+          "required": true,
+          "system": false,
+          "type": "EVENT_STREAM"
+        }
+      ],
+      "returnTypes": [
+        "HEALTH_STATE"
+      ],
+      "script": "{{ include "./scripts/SAP health state check.groovy" }}"
+    },
+    {
+      "_type": "ComponentMappingFunction",
+      "description": "The generic mapping function that is used by the SAP integration synchronisation as the default mapping function.",
+      "id": -929,
+      "identifier": "urn:stackpack:sap:shared:component-mapping-function:sap-generic-mapping-function",
+      "name": "SAP generic component mapping function",
+      "parameters": [
+        {
+          "_type": "Parameter",
+          "id": -947,
+          "multiple": false,
+          "name": "element",
+          "required": true,
+          "system": true,
+          "type": "STRUCT_TYPE"
+        }
+      ],
+      "script": "{{ include "./scripts/SAP generic component mapping function.groovy" }}"
+    },
+    {
+      "_type": "ComponentType",
+      "iconbase64": "{{ include "./icons/SAP Database.png" "base64" }}",
+      "id": -903,
+      "identifier": "urn:stackpack:sap:shared:component-type:sap-database",
+      "name": "sap-database"
+    },
+    {
+      "_type": "ComponentType",
+      "iconbase64": "{{ include "./icons/SAP Database Component.png" "base64" }}",
+      "id": -904,
+      "identifier": "urn:stackpack:sap:shared:component-type:sap-database-component",
+      "name": "sap-database-component"
+    },
+    {
+      "_type": "ComponentType",
+      "iconbase64": "{{ include "./icons/SAP Host.png" "base64" }}",
+      "id": -905,
+      "identifier": "urn:stackpack:sap:shared:component-type:sap-host",
+      "name": "sap-host"
+    },
+    {
+      "_type": "ComponentType",
+      "iconbase64": "{{ include "./icons/SAP Instance.png" "base64" }}",
+      "id": -906,
+      "identifier": "urn:stackpack:sap:shared:component-type:sap-instance",
+      "name": "sap-instance"
+    },
+    {
+      "_type": "ComponentType",
+      "iconbase64": "{{ include "./icons/SAP Process.png" "base64" }}",
+      "id": -907,
+      "identifier": "urn:stackpack:sap:shared:component-type:sap-process",
+      "name": "sap-process"
+    },
+    {
+      "_type": "Domain",
+      "id": -908,
+      "identifier": "urn:stackpack:sap:shared:domain:sap-{{instanceName}}",
+      "name": "SAP-{{instanceName}}",
+      "order": 3.012
+    },
+    {
+      "_type": "Layer",
+      "id": -909,
+      "identifier": "urn:stackpack:sap:shared:layer:sap-instances",
+      "name": "SAP Instances",
+      "order": 415.1
+    },
+    {
+      "_type": "Layer",
+      "id": -911,
+      "identifier": "urn:stackpack:sap:shared:layer:sap-database-components",
+      "name": "SAP Database Components",
+      "order": 401.1
+    },
+    {
+      "_type": "IdExtractorFunction",
+      "groovyScript": "{{ include "./scripts/SAP component id extractor.groovy" }}",
+      "id": -912,
+      "identifier": "urn:stackpack:sap:shared:id-extractor-function:sap-component-id-extractor",
+      "name": "SAP component id extractor",
+      "parameters": [
+        {
+          "_type": "Parameter",
+          "id": -913,
+          "multiple": false,
+          "name": "struct",
+          "required": true,
+          "system": true,
+          "type": "STRUCT_TYPE"
+        }
+      ]
+    },
+    {
+      "_type": "IdExtractorFunction",
+      "groovyScript": "{{ include "./scripts/SAP relation id extractor.groovy" }}",
+      "id": -914,
+      "identifier": "urn:stackpack:sap:shared:id-extractor-function:sap-relation-id-extractor",
+      "name": "SAP relation id extractor",
+      "parameters": [
+        {
+          "_type": "Parameter",
+          "id": -915,
+          "multiple": false,
+          "name": "struct",
+          "required": true,
+          "system": true,
+          "type": "STRUCT_TYPE"
+        }
+      ]
+    },
+    {
+      "_type": "RelationTemplateFunction",
+      "handlebarsTemplate": "{{ include "./templates/SAP generic relation template.json.handlebars" }}",
+      "id": -916,
+      "identifier": "urn:stackpack:sap:shared:relation-template-function:sap-relation-template",
+      "name": "SAP relation template",
+      "parameters": [
+        {
+          "_type": "Parameter",
+          "id": -917,
+          "multiple": false,
+          "name": "element",
+          "required": true,
+          "system": true,
+          "type": "STRUCT_TYPE"
+        }
+      ]
+    },
+    {
+      "_type": "ComponentTemplateFunction",
+      "handlebarsTemplate": "{{ include "./templates/SAP generic component template.json.handlebars" }}",
+      "id": -926,
+      "identifier": "urn:stackpack:sap:shared:component-template-function:sap-generic-component-template",
+      "name": "SAP generic component template",
+      "parameters": [
+        {
+          "_type": "Parameter",
+          "id": -927,
+          "multiple": false,
+          "name": "element",
+          "required": true,
+          "system": true,
+          "type": "STRUCT_TYPE"
+        }
+      ]
+    }
+  ],
+  "timestamp": "2020-01-08T12:18:44Z",
+  "version": "0.1"
+}

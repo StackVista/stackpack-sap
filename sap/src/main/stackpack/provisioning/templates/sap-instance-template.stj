@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "_type": "DataSource",
+      "name": "SAP instance - {{instanceName}} ",
+      "pluginId": "Sts",
+      "identifier": "urn:stackpack:sap:instance:{{instanceId}}:data-source:sap",
+      "config": {
+        "expireElementsAfter": 172800000,
+        "_type": "Sts.StsTopologyDataSourceConfig",
+        "autoExpireElements": false,
+        "id": -132,
+        "supportedWindowingMethods": [],
+        "integrationType": "sap",
+        "supportedDataTypes": ["TOPOLOGY_ELEMENTS"],
+        "topic": "{{ topicName }}"
+      },
+      "extTopology": {
+        "_type": "ExtTopology",
+        "dataSource": -130,
+        "id": -118,
+        "settings": {
+          "_type": "TopologySyncSettings",
+          "cleanupInterval": 3600000,
+          "maxBatchesPerSecond": 5,
+          "id": -131,
+          "maxBatchSize": 200,
+          "cleanupExpiredElements": false
+        }
+      },
+      "id": -130,
+      "uiRequestTimeout": 15000
+    },
+    {
+      "_type": "QueryView",
+      "groupedByDomains": true,
+      "groupedByLayers": true,
+      "groupingEnabled": true,
+      "id": -160,
+      "identifier": "urn:stackpack:sap:instance:{{instanceId}}:query-view:sap-database",
+      "minimumGroupSize": 8,
+      "name": "SAP - Databases - {{instanceName}}",
+      "query": "(type IN (\"sap-database\", \"sap-database-component\") AND label IN (\"stackpack:sap\"))",
+      "queryVersion": "0.0.1",
+      "showIndirectRelations": false
+    },
+    {
+      "_type": "QueryView",
+      "groupedByDomains": true,
+      "groupedByLayers": true,
+      "groupingEnabled": true,
+      "id": -190,
+      "identifier": "urn:stackpack:sap:instance:{{instanceId}}:query-view:sap-instance",
+      "minimumGroupSize": 8,
+      "name": "SAP - Instances - {{instanceName}}",
+      "query": "(type IN (\"sap-instance\", \"sap-host\", \"sap-process\") AND label IN (\"stackpack:sap\"))",
+      "queryVersion": "0.0.1",
+      "showIndirectRelations": false
+    },
+    {
+      "_type": "Sync",
+      "componentActions": [],
+      "defaultComponentAction": {
+        "_type": "SyncActionCreateComponent",
+        "id": -21,
+        "mappingFunction": {{ get "urn:stackpack:sap:shared:component-mapping-function:sap-generic-mapping-function" }},
+        "mergeStrategy": "MergePreferTheirs",
+        "templateFunction": {{ get "urn:stackpack:sap:shared:component-template-function:sap-generic-component-template" }},
+        "type": ""
+      },
+      "defaultRelationAction": {
+        "_type": "SyncActionCreateRelation",
+        "id": -22,
+        "mergeStrategy": "MergePreferTheirs",
+        "templateFunction": {{ get "urn:stackpack:sap:shared:relation-template-function:sap-relation-template" }},
+        "type": "default_relation_mapping"
+      },
+      "extTopology": -118,
+      "id": -19,
+      "identifier": "urn:stackpack:sap:instance:{{instanceId}}:sync:sap",
+      "name": "SAP Sync - {{instanceName}}",
+      "relationActions": [],
+      "topologyDataQuery": {
+        "_type": "Sts.StsTopologyElementsQuery",
+        "componentIdExtractorFunction": {{ get "urn:stackpack:sap:shared:id-extractor-function:sap-component-id-extractor" }},
+        "consumerOffsetStartAtEarliest": false,
+        "id": -200,
+        "relationIdExtractorFunction": {{ get "urn:stackpack:sap:shared:id-extractor-function:sap-relation-id-extractor" }}
+      }
+    }
+  ],
+  "timestamp": "2019-11-27T15:38:55Z",
+  "version": "0.1"
+}
