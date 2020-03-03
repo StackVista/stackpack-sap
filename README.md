@@ -31,6 +31,14 @@ In the main directory, test the SAP StackPack using:
 sbt test
 ```
 
+## Packaging
+
+In the main directory, package the SAP StackPack using:
+
+```
+sbt package
+```
+
 ## Versioning
 
 The SAP StackPack release version is configured in the [version.sbt](sap/version.sbt) file. StackPacks use [Semantic Versioning](https://semver.org/).

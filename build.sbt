@@ -1,22 +1,14 @@
 import Dependencies._
 
-/*
- * StackPacks
- *
- * Also add each stackpack to 'allStackpacks'
- */
-lazy val sap = project in file("sap")
-
-lazy val allStackpacks = List(sap)
+val stackpackName = "stackpack-sap"
 
 /*
- * General build setup, don't touch this when adding a StackPack
+ * General build setup
  */
 lazy val root = (project in file("."))
-  .disablePlugins(StackPack)
   .settings(
     inThisBuild(List(
-      organization := "com.stackstate.stackpack",
+      organization := "ext.stackstate.stackpack",
       updateOptions := updateOptions.value.withGigahorse(false), // Work around for bug: https://github.com/sbt/sbt/issues/3570
       scalaVersion := "2.12.6",
         scalacOptions ++= Vector(
@@ -44,7 +36,7 @@ lazy val root = (project in file("."))
         // disable publishing the main sources jar
         publishArtifact in (Compile, packageSrc) := false
     )),
-    name := "stackpacks",
+    name := stackpackName,
     // disable publishing the main project
     publish / skip := true
-  ).aggregate(allStackpacks.map(Project.projectToRef):_*)
+  )
