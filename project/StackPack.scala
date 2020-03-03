@@ -2,6 +2,7 @@ import sbt.Keys._
 import sbt._
 import scala.sys.process._
 import scala.io.Source
+import sbt.Package._
 
 object StackPackKeys {
   val packageStackPack = taskKey[Seq[File]]("Build and package custom code for the stackpack, for example python code that will deployed during provisioning.")
