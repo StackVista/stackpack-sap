@@ -1,6 +1,6 @@
 # StackState SAP StackPack
 
-This repository contains the StackState SAP StackPack. The code is distributed under the [Apache 2.0](LICENSE) license.
+This repository contains the StackState SAP StackPack. The code is distributed under the [Apache 2.0](LICENSE.md) license.
 
 ## Introduction
 
@@ -43,7 +43,7 @@ sbt package
 
 ## Versioning
 
-The SAP StackPack release version is configured in the [version.sbt](sap/version.sbt) file. StackPacks use [Semantic Versioning](https://semver.org/).
+The SAP StackPack release version is configured in the [version.sbt](version.sbt) file. StackPacks use [Semantic Versioning](https://semver.org/).
 
 ## Contributing
 
@@ -52,7 +52,7 @@ Contributions are welcome! Please check our [contribution instructions](CONTRIBU
 ## Legal
 
 Contributions to the SAP StackPack are contributed under the "inbound=outbound" principle. This means
-that contributions are licensed under the same license as the [source code](LICENSE).
+that contributions are licensed under the same license as the [source code](LICENSE.md).
 We do not require you to sign a separate CLA (Contributor License Agreement) or any other kind of document.
 
 Thank you for your contributions!
