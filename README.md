@@ -5,7 +5,9 @@ This repository contains the StackState SAP StackPack. The code is distributed u
 ## Introduction
 
 The SAP StackPack connects SAP to StackState, allowing you to monitor your SAP instance(s). You can find the
-[capabilities of the StackPack](sap/src/main/stackpack/resources/overview.md) and the [configuration instructions](sap/src/main/stackpack/resources/detailed-overview.md) in this repository.
+[capabilities of the StackPack](src/main/stackpack/resources/overview.md) and the [configuration instructions](src/main/stackpack/resources/detailed-overview.md) in this repository.
+
+The SAP StackPack configures StackState to processes data produced by the SAP integration in the [StackState agent](https://github.com/StackVista/stackstate-agent). The SAP integration can be found in the [integrations repository](https://github.com/StackVista/stackstate-agent-integrations/tree/master/sap).
 
 ## Documentation
 
@@ -49,7 +51,7 @@ Contributions are welcome! Please check our [contribution instructions](CONTRIBU
 
 ## Legal
 
-Contributions to the SAP StackPack are contributed under the "inbound=outbpund" principle. This means
+Contributions to the SAP StackPack are contributed under the "inbound=outbound" principle. This means
 that contributions are licensed under the same license as the [source code](LICENSE).
 We do not require you to sign a separate CLA (Contributor License Agreement) or any other kind of document.
 
