@@ -76,13 +76,6 @@
       "name": "sap-process"
     },
     {
-      "_type": "Domain",
-      "id": -908,
-      "identifier": "urn:stackpack:sap:shared:domain:sap-{{instanceName}}",
-      "name": "SAP-{{instanceName}}",
-      "order": 3.012
-    },
-    {
       "_type": "Layer",
       "id": -909,
       "identifier": "urn:stackpack:sap:shared:layer:sap-instances",

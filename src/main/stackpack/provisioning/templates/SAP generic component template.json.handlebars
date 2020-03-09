@@ -127,7 +127,7 @@
   "type" : \{{ getOrCreate (identifier "urn:stackpack:sap:shared" "ComponentType" element.type.name ) (identifier "urn:system:auto" "ComponentType" "sap-generic-resource") "Type=ComponentType;Name=SAP generic resource" \}},
   "version": "\{{ element.data.version \}}",
   "layer" : \{{ get element.data.layer \}},
-  "domain": \{{ get "urn:stackpack:sap:shared:domain:sap-{{instanceName}}" \}},
+  "domain": \{{ getOrCreate (identifier "urn:stackpack:sap:shared" "Domain"  "sap-{{instanceName}}") (identifier "urn:system:auto" "Domain" "sap-{{instanceName}}") "Type=Domain;Name=sap-{{instanceName}}" \}},
   "environments": [
     \{{ get "urn:stackpack:common:environment:production" \}}
   ]
