@@ -15,7 +15,7 @@ To Connect to your SAP System, there are 2 ways to do so as explained below:
 
 ##### 1. HTTP Basic Authentication Mechanism
 
-This mechanism allow you to connect just using the `username` and `password` inside the `conf.yaml`.
+This mechanism allows you to connect just using the `username` and `password` inside the `conf.yaml`.
 
 _As an example, see the below config :_
 
@@ -34,7 +34,7 @@ instances:
 
 ##### 2. Client Certificate Authentication Mechanism
 
-This mechanism allow you to connect using the client certificate and the private key. 
+This mechanism allows you to connect using the client certificate and the private key. 
 The following new parameters are available :
 * `verify` - `True` or `False` depending on verifying the client certificate or not. By default, it's `True`.
 * `cert` - path containing the client side certificate
@@ -57,7 +57,7 @@ instances:
 ```
 **NOTE** - Make sure while using this mechanism, you have put `https` in the `url` of the config.
 
-Once the configuration changes are done as explained above, restart the StackState Agent(s) using below command.
+Once the configuration changes are done as explained above, restart the StackState Agent(s) using the following command.
 
 ```
 sudo /etc/init.d/stackstate-agent restart
