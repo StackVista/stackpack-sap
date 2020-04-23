@@ -17,7 +17,7 @@ To Connect to your SAP System, there are 2 ways to do so as explained below:-
 
 This mechanism allow you to connect just using the `username` and `password` inside the `conf.yaml`.
 
-_As an example, see the below config :-_
+_As an example, see the below config :_
 
 ```
 # Section used for global SAP check config
@@ -34,13 +34,13 @@ instances:
 
 ##### 2. Client Certificate Authentication Mechanism
 
-This mechanism allow you to connect through the client certificate and private key for the certificate provided. 
-The following new parameters are available :-
-* `verify` - `True` or `False` depending on verifying the client certificate or not. By default, it's `False`.
+This mechanism allow you to connect using the client certificate and the private key. 
+The following new parameters are available :
+* `verify` - `True` or `False` depending on verifying the client certificate or not. By default, it's `True`.
 * `cert` - path containing the client side certificate
 * `keyfile` - path containing the private key for certificate
 
-_As an example, see the below config :-_
+_As an example, see the below config :_
 
 ```
 # Section used for global SAP check config
