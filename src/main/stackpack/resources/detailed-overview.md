@@ -11,7 +11,7 @@ To enable the SAP check which collects the data from SAP host instance:
 
 Edit the `conf.yaml` file in your agent `/etc/stackstate-agent/conf.d/sap.d` directory, replacing `<sap_host_name>` and `<sap_host_url>` with the unique name of SAP host to identify and URL to connect from your SAP instance.
 
-To Connect to your SAP System, there are 2 ways to do so as explained below:-
+To Connect to your SAP System, there are 2 ways to do so as explained below:
 
 ##### 1. HTTP Basic Authentication Mechanism
 
