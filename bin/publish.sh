@@ -109,7 +109,7 @@ fi
 sed -i'' -e '/^$/d'  $version_file
 
 git add "${version_file}"
-git commit -m "$stackpack StackPack version $publish_version" --no-verify
+git commit -m "StackPack version $publish_version" --no-verify
 exitOnError
 comment "Committed new version $publish_version"
 
