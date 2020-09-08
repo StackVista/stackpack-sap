@@ -1,12 +1,12 @@
 streams = new ArrayList();
 checks = new ArrayList();
 labels = new ArrayList();
-layer = "urn:stackpack:sap:shared:layer:sap-resource"
+layer = "urn:stackpack:common:layer:uncategorized"
 
 switch (element.type.name) {
     case 'sap-host':
-        layer = 'urn:stackpack:common:layer:hosts'
-        labels.addAll(['stackpack:sap','sap-host'])
+        layer = 'urn:stackpack:common:layer:machines'
+        labels.addAll(['sap-host'])
         element.data.name = element.data.host
         streams.addAll([
             [
@@ -25,7 +25,7 @@ switch (element.type.name) {
         break
     case 'sap-instance':
         layer = 'urn:stackpack:sap:shared:layer:sap-instances'
-        labels.addAll(['stackpack:sap', 'sap-instance'])
+        labels.addAll(['sap-instance'])
         element.data.name = element.data.name +'-'+ element.data.system_number
         streams.addAll([
             [
@@ -96,7 +96,7 @@ switch (element.type.name) {
         break
     case 'sap-process':
         layer = 'urn:stackpack:common:layer:processes'
-        labels.addAll(['stackpack:sap', 'sap-process'])
+        labels.addAll(['sap-process'])
         streams.addAll([
             [
                 name: "SAP Process state",
@@ -115,7 +115,7 @@ switch (element.type.name) {
         break
     case 'sap-database':
         layer = 'urn:stackpack:common:layer:databases'
-        labels.addAll(['stackpack:sap', 'sap-database'])
+        labels.addAll(['sap-database'])
         streams.addAll([
             [
                 name: "SAP Database state",
@@ -134,7 +134,7 @@ switch (element.type.name) {
         break
     case 'sap-database-component':
         layer = 'urn:stackpack:sap:shared:layer:sap-database-components'
-        labels.addAll(['stackpack:sap', 'sap-database-component'])
+        labels.addAll(['sap-database-component'])
         streams.addAll([
             [
                 name: "SAP Database Component state",
@@ -159,5 +159,11 @@ element.data.put('streams', streams)
 element.data.put('checks', checks)
 element.data.put('layer', layer)
 element.data.put('labels', labels)
+if (!element.data.domain){
+    element.data.put("domain", "SAP")
+}
+if (!element.data.environment){
+    element.data.put("environment", "SAP")
+}
 
 element

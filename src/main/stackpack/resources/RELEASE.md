@@ -1,5 +1,15 @@
 # SAP Release Notes
 
+## [1.2.0](#) (09-09-2020)
+
+**Features**
+- [X] Introduced the Release notes pop up for customer
+- [X] Use new common layering structure
+
+**Bugfixes**
+- [X] Fix layer for new different SAP component types
+- [X] Remove instanceName for generic templates
+
 ## [1.1.0](#) (28-04-2020)
 
 - [X] Updated documentation for Client Certificate Authentication.
