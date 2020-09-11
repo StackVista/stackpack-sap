@@ -27,7 +27,7 @@ class SAPProvisioningTest extends WordSpecLike with Matchers {
       stackPackPackage.install(provisioningContext, config.asJava).run()
 
       val (_, templateFile, args) = verifyTemplateImportedWithNamespace(provisioningContext.stackPack.namespace)
-      args should not be empty
+      args shouldBe empty
       templateFile shouldBe "templates/sap.stj"
 
       val (_, instanceTemplateFile, instanceArgs) = verifyTemplateImportedWithNamespace(provisioningContext.instance.namespace)

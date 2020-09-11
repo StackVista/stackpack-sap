@@ -10,6 +10,7 @@ The following prerequisites need to be met:
 To enable the SAP check which collects the data from SAP host instance:
 
 Edit the `conf.yaml` file in your agent `/etc/stackstate-agent/conf.d/sap.d` directory, replacing `<sap_host_name>` and `<sap_host_url>` with the unique name of SAP host to identify and URL to connect from your SAP instance.
+You can provide `domain` and `environment` in the instance config which will take precedence in the StackState view. 
 
 To Connect to your SAP System, there are 2 ways to do so as explained below:
 
@@ -28,6 +29,10 @@ instances:
       url: http://test-01   # <sap_host_url>   
       user: test            # <username>
       pass: test            # <password> 
+      domain: sap           # <optional>
+      environment: sap      # <optional>
+      tags:                 # <optional>
+        - customer:stackstate
 ```
 **NOTE** - Make sure while using this mechanism, you have put `http` in the `url` of the config.
 
@@ -54,6 +59,10 @@ instances:
       verify: False
       cert: /path/to/cert.pem   # <certificate_path>
       keyfile: /path/to/key.pem # <keyfile_path>
+      domain: sap           # <optional>
+      environment: sap      # <optional>
+      tags:                 # <optional>
+        - customer:stackstate
 ```
 **NOTE** - Make sure while using this mechanism, you have put `https` in the `url` of the config.
 

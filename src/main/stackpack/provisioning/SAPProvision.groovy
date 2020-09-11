@@ -12,7 +12,6 @@ class SAPProvision extends ProvisioningScript {
   @Override
   ProvisioningIO<scala.Unit> install(Map<String, Object> config) {
 
-    def args = ['instanceName': config.sap_host]
     def templateArguments = [
                 'topicName': topicName(config),
                 'instanceId': context().instance().id(),
@@ -20,7 +19,7 @@ class SAPProvision extends ProvisioningScript {
                 ]
     templateArguments.putAll(config)
 
-    return context().stackPack().importSnapshot("templates/sap.stj", args) >>
+    return context().stackPack().importSnapshot("templates/sap.stj", [:]) >>
            context().instance().importSnapshot("templates/sap-instance-template.stj", templateArguments)
   }
 

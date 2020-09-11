@@ -90,6 +90,20 @@
       "order": 401.1
     },
     {
+      "_type": "Domain",
+      "description": "SAP generic domain",
+      "id": -960,
+      "identifier": "urn:stackpack:sap:shared:domain:sap",
+      "name": "SAP",
+      "order": 100.1
+    },
+    {
+      "_type": "Environment",
+      "id": -961,
+      "identifier": "urn:stackpack:sap:shared:environment:sap",
+      "name": "SAP"
+    },
+    {
       "_type": "IdExtractorFunction",
       "groovyScript": "{{ include "./scripts/SAP component id extractor.groovy" }}",
       "id": -912,

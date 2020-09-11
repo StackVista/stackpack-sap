@@ -105,8 +105,16 @@
         \{{/if \}}
   ],
   "labels": [
+    {
+        "name": "sap-host:\{{element.data.host\}}",
+        "_type": "Label"
+    },
+    {
+        "name": "stackpack:sap",
+        "_type": "Label"
+    }
     \{{#if element.data.labels\}}
-    \{{# join element.data.labels ","\}}
+    \{{# join element.data.labels "," ","\}}
         {
           "_type": "Label",
           "name": "\{{ this \}}"
@@ -117,7 +125,7 @@
     \{{# join element.data.tags "," ","\}}
     {
       "_type": "Label",
-      "name": "\{{key\}}:\{{this\}}"
+      "name": "\{{this\}}"
     }
     \{{/ join \}}
     \{{/if\}}
@@ -127,8 +135,8 @@
   "type" : \{{ getOrCreate (identifier "urn:stackpack:sap:shared" "ComponentType" element.type.name ) (identifier "urn:system:auto" "ComponentType" "sap-generic-resource") "Type=ComponentType;Name=SAP generic resource" \}},
   "version": "\{{ element.data.version \}}",
   "layer" : \{{ get element.data.layer \}},
-  "domain": \{{ getOrCreate (identifier "urn:stackpack:sap:shared" "Domain"  "sap-{{instanceName}}") (identifier "urn:system:auto" "Domain" "sap-{{instanceName}}") "Type=Domain;Name=sap-{{instanceName}}" \}},
+  "domain": \{{ getOrCreate (identifier "urn:stackpack:sap:shared" "Domain" element.data.domain) (identifier "urn:system:auto" "Domain" element.data.domain) (concat "Type=Domain;Name=" element.data.domain) \}},
   "environments": [
-    \{{ get "urn:stackpack:common:environment:production" \}}
+    \{{ getOrCreate (identifier "urn:stackpack:sap:shared" "Environment" element.data.environment) (identifier "urn:system:auto" "Environment" element.data.environment) (concat "Type=Environment;Name=" element.data.environment) \}}
   ]
 }
