@@ -40,7 +40,7 @@
       "identifier": "urn:stackpack:sap:instance:{{instanceId}}:query-view:sap-database",
       "minimumGroupSize": 8,
       "name": "SAP - Databases - {{instanceName}}",
-      "query": "(type IN (\"sap-database\", \"sap-database-component\") AND label IN (\"stackpack:sap\", \"sap-host:{{instanceName}}\"))",
+      "query": "(type IN (\"sap-database\", \"sap-database-component\") AND label IN (\"stackpack:sap\") AND label IN (\"sap-host:{{instanceName}}\"))",
       "queryVersion": "0.0.1",
       "showIndirectRelations": false
     },
@@ -53,7 +53,7 @@
       "identifier": "urn:stackpack:sap:instance:{{instanceId}}:query-view:sap-instance",
       "minimumGroupSize": 8,
       "name": "SAP - Instances - {{instanceName}}",
-      "query": "(type IN (\"sap-instance\", \"sap-host\", \"sap-process\") AND label IN (\"stackpack:sap\", \"sap-host:{{instanceName}}\"))",
+      "query": "(type IN (\"sap-instance\", \"sap-host\", \"sap-process\") AND label IN (\"stackpack:sap\") AND label IN (\"sap-host:{{instanceName}}\"))",
       "queryVersion": "0.0.1",
       "showIndirectRelations": false
     },
@@ -66,7 +66,7 @@
        "identifier": "urn:stackpack:sap:instance:{{instanceId}}:query-view:sap-uncategorized",
        "minimumGroupSize": 8,
        "name": "SAP - Uncategorized - {{instanceName}}",
-       "query": "(layer IN (\"Uncategorized\") AND label IN (\"stackpack:sap\", \"sap-host:{{instanceName}}\"))",
+       "query": "(layer IN (\"Uncategorized\") AND label IN (\"stackpack:sap\") AND label IN (\"sap-host:{{instanceName}}\"))",
        "queryVersion": "0.0.1",
        "showIndirectRelations": false
     },
