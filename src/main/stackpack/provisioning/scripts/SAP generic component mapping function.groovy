@@ -13,7 +13,7 @@ switch (element.type.name) {
                 name: "SAP Host Control state",
                 conditions: [
                     [ "key": "tags.source_type_name", "value": "SAP:host control" ],
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-105",
                 dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -22,7 +22,7 @@ switch (element.type.name) {
                 name: "Free Space In Paging Files",
                 metric: "SAP:FreeSpaceInPagingFiles",
                 conditions: [
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-102",
                 dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -35,7 +35,7 @@ switch (element.type.name) {
                 name: "Size Stored In Paging Files",
                 metric: "SAP:SizeStoredInPagingFiles",
                 conditions: [
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-103",
                 dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -48,7 +48,7 @@ switch (element.type.name) {
                 name: "Total Swap Space Size",
                 metric: "SAP:TotalSwapSpaceSize",
                 conditions: [
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-104",
                 dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -72,7 +72,7 @@ switch (element.type.name) {
                 conditions: [
                     [ "key": "tags.instance_id", "value": element.data.system_number ],
                     [ "key": "tags.source_type_name", "value": "SAP:host instance" ],
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-105",
                 dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -82,7 +82,7 @@ switch (element.type.name) {
                 metric: "phys_memsize",
                 conditions: [
                     [ "key": "tags.instance_id", "value": element.data.system_number ],
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-101",
                 dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -96,7 +96,7 @@ switch (element.type.name) {
                 conditions: [
                     [ "key": "tags.instance_id", "value": element.data.system_number ],
                     [ "key": "tags.source_type_name", "value": "SAP:DatabaseConnection" ],
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-191",
                 dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -113,7 +113,7 @@ switch (element.type.name) {
                     metric: "DIA_workers_free",
                     conditions: [
                         [ "key": "tags.instance_id", "value": element.data.system_number ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-102",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -127,7 +127,7 @@ switch (element.type.name) {
                     metric: "BTC_workers_free",
                     conditions: [
                         [ "key": "tags.instance_id", "value": element.data.system_number ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-103",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -141,7 +141,7 @@ switch (element.type.name) {
                     conditions: [
                       [ "key": "tags.instance_id", "value": element.data.system_number ],
                       [ "key": "tags.source_type_name", "value": "SAP:ResponseTimeDialog" ],
-                      [ "key": "host", "value": element.data.host ],
+                      [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-186",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -151,7 +151,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.instance_id", "value": element.data.system_number ],
                         [ "key": "tags.source_type_name", "value": "SAP:Spool utilization" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-187",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -161,7 +161,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.instance_id", "value": element.data.system_number ],
                         [ "key": "tags.source_type_name", "value": "SAP:ErrorsInWpSPO" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-188",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -171,7 +171,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.instance_id", "value": element.data.system_number ],
                         [ "key": "tags.source_type_name", "value": "SAP:ErrorsFreqInWpSPO" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-189",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -181,7 +181,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.instance_id", "value": element.data.system_number ],
                         [ "key": "tags.source_type_name", "value": "SAP:ShortDumpFrequency" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-190",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -193,11 +193,11 @@ switch (element.type.name) {
                 ["name": "Dialog Response Time Health", "streamId": "-186", "isSapCheck": true],
                 ["name": "Spool Health", "streamId": "-187", "isSapCheck": true],
                 ["name": "Spool Errors Health", "streamId": "-188", "isSapCheck": true],
-                ["name": "Spool Errors Frequency Health", "streamId": "-189", "isSapCheck": true],
+                ["name": "Spool Errors Frequency Health", "streamId": "-189", "isSapCheck": true]
             ])
             if (element.data.environment.contains("PRD")){
               checks.addAll([
-                ["name": "Shortdump frequency Health", "streamId": "-190", "isSapCheck": true],
+                ["name": "Shortdump frequency Health", "streamId": "-190", "isSapCheck": true]
               ])
             }
         }
@@ -212,7 +212,7 @@ switch (element.type.name) {
                 conditions: [
                     [ "key": "tags.pid", "value": element.data.pid ],
                     [ "key": "tags.source_type_name", "value": "SAP:process state" ],
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-105",
                 dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -231,7 +231,7 @@ switch (element.type.name) {
                 conditions: [
                     [ "key": "tags.database_name", "value": element.data.name ],
                     [ "key": "tags.source_type_name", "value": "SAP:database state" ],
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-105",
                 dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -247,7 +247,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.database", "value": element.data.name ],
                         [ "key": "tags.source_type_name", "value": "ORA:TableSpaceStatus" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-201",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -257,7 +257,7 @@ switch (element.type.name) {
                     metric: "ORA:FreeTableSpace",
                     conditions: [
                         [ "key": "host", "value": element.data.host ],
-                        [ "key": "tags.database", "value": element.data.name ],
+                        [ "key": "tags.database", "value": element.data.name ]
                     ],
                     id: "-212",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -278,7 +278,7 @@ switch (element.type.name) {
                     metric: "MAXDB:UsedDataArea",
                     conditions: [
                         [ "key": "host", "value": element.data.host ],
-                        [ "key": "tags.database", "value": element.data.name ],
+                        [ "key": "tags.database", "value": element.data.name ]
                     ],
                     id: "-207",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -292,7 +292,7 @@ switch (element.type.name) {
                     metric: "MAXDB:UsedLogArea",
                     conditions: [
                         [ "key": "host", "value": element.data.host ],
-                        [ "key": "tags.database", "value": element.data.name ],
+                        [ "key": "tags.database", "value": element.data.name ]
                     ],
                     id: "-208",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -310,7 +310,7 @@ switch (element.type.name) {
                     metric: "SYB:LicenseExpiringDays",
                     conditions: [
                         [ "key": "host", "value": element.data.host ],
-                        [ "key": "tags.database", "value": element.data.name ],
+                        [ "key": "tags.database", "value": element.data.name ]
                     ],
                     id: "-213",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -329,7 +329,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.database", "value": element.data.name ],
                         [ "key": "tags.source_type_name", "value": "HDB:BackupExist" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-202",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -339,7 +339,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.database", "value": element.data.name ],
                         [ "key": "tags.source_type_name", "value": "HDB:RecentBackup" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-203",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -349,7 +349,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.database", "value": element.data.name ],
                         [ "key": "tags.source_type_name", "value": "HDB:RecentLogBackup" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-204",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -359,7 +359,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.database", "value": element.data.name ],
                         [ "key": "tags.source_type_name", "value": "HDB:SystemBackupExists" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-205",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -369,7 +369,7 @@ switch (element.type.name) {
                     conditions: [
                         [ "key": "tags.database", "value": element.data.name ],
                         [ "key": "tags.source_type_name", "value": "HDB:SystemReplication" ],
-                        [ "key": "host", "value": element.data.host ],
+                        [ "key": "host", "value": element.data.host ]
                     ],
                     id: "-206",
                     dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -379,7 +379,7 @@ switch (element.type.name) {
                     metric: "HDB:DeltaMerges",
                     conditions: [
                         [ "key": "host", "value": element.data.host ],
-                        [ "key": "tags.database", "value": element.data.name ],                        
+                        [ "key": "tags.database", "value": element.data.name ]
                     ],
                     id: "-209",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -393,7 +393,7 @@ switch (element.type.name) {
                     metric: "HDB:LicenseExpiringDays",
                     conditions: [
                         [ "key": "host", "value": element.data.host ],
-                        [ "key": "tags.database", "value": element.data.name ],                        
+                        [ "key": "tags.database", "value": element.data.name ]                        
                     ],
                     id: "-210",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -407,7 +407,7 @@ switch (element.type.name) {
                     metric: "HDB:LastBackupDays",
                     conditions: [
                         [ "key": "host", "value": element.data.host ],
-                        [ "key": "tags.database", "value": element.data.name ],                        
+                        [ "key": "tags.database", "value": element.data.name ]                       
                     ],
                     id: "-211",
                     dataSource: "urn:stackpack:common:data-source:stackstate-metrics",
@@ -422,7 +422,7 @@ switch (element.type.name) {
                 ["name": "Recent Backup Health state", "streamId": "-203", "isSapCheck": true],
                 ["name": "Recent Log Backup Health state", "streamId": "-204", "isSapCheck": true],
                 ["name": "System Backup Health state", "streamId": "-205", "isSapCheck": true],
-                ["name": "System Replication Health state", "streamId": "-206", "isSapCheck": true],
+                ["name": "System Replication Health state", "streamId": "-206", "isSapCheck": true]
             ])
         }
         break
@@ -436,7 +436,7 @@ switch (element.type.name) {
                     [ "key": "tags.database_component_name", "value": element.data.name ],
                     [ "key": "tags.source_type_name", "value": "SAP:database component state" ],
                     [ "key": "tags.database_name", "value": element.data.database_name ],
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-200",
                 dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -455,7 +455,7 @@ switch (element.type.name) {
                 name: "SAP Cloud Connector state",
                 conditions: [
                     [ "key": "tags.source_type_name", "value": "SAP:scc state" ],
-                    [ "key": "host", "value": element.data.host ],
+                    [ "key": "host", "value": element.data.host ]
                 ],
                 id: "-195",
                 dataSource: "urn:stackpack:common:data-source:stackstate-generic-events"
@@ -475,7 +475,7 @@ switch (element.type.name) {
                 conditions: [
                     [ "key": "tags.source_type_name", "value": "SAP:scc subaccount state" ],
                     [ "key": "host", "value": element.data.host ],
-                    [ "key": "tags.subaccount_name", "value": element.data.name ],
+                    [ "key": "tags.subaccount_name", "value": element.data.name ]
                     
                 ],
                 id: "-196",
