@@ -70,6 +70,18 @@
     },
     {
       "_type": "ComponentType",
+      "iconbase64": "{{ include "./icons/cloudconnector_circle.png" "base64" }}",
+      "identifier": "urn:stackpack:sap:shared:component-type:sap-cloud-connector",
+      "name": "sap-cloud-connector"
+    },
+     {
+      "_type": "ComponentType",
+      "iconbase64": "{{ include "./icons/cloudconnector.png" "base64" }}",
+      "identifier": "urn:stackpack:sap:shared:component-type:sap-scc-subaccount",
+      "name": "sap-scc-subaccount"
+    },
+    {
+      "_type": "ComponentType",
       "iconbase64": "{{ include "./icons/SAP Process.png" "base64" }}",
       "id": -907,
       "identifier": "urn:stackpack:sap:shared:component-type:sap-process",
