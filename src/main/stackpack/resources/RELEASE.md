@@ -1,5 +1,10 @@
 # SAP Release Notes
 
+## [2.0.1](#) (30-03-2021)
+
+**Improvements**
+- Minimum StackState version bumped
+
 ## [2.0.0](#) (29-03-2021)
 
 **Improvements**
