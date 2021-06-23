@@ -1,11 +1,5 @@
 # SAP Release Notes
 
-## [1.3.2](#) (18-06-2021)
-
-**Improvements**
-- Fetch dependencies from the Artifactory
-
-
 ## [1.3.1](#) (03-04-2021)
 
 **Improvements**
