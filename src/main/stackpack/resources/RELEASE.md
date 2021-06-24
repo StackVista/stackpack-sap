@@ -1,5 +1,10 @@
 # SAP Release Notes
 
+## [1.3.1](#) (03-04-2021)
+
+**Improvements**
+- Common version bumped to 2.5.1
+
 ## [1.3.0](#) (30-03-2021)
 
 **Improvements**
