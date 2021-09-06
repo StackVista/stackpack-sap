@@ -14,6 +14,9 @@ def healthState = stateOpt
         case "sapcontrol-green": // fall through
         case "sap-host-instance-success":
         case "sap-host-control-success":
+        case "connected": 
+        case "ok":    
+        case "online":            
         case "saphostcontrol-db-running": return CLEAR
 
         case "sapcontrol-yellow": // fall through
@@ -22,6 +25,8 @@ def healthState = stateOpt
         case "sapcontrol-red": //fall through
         case "sap-host-instance-error":
         case "sap-host-control-error":
+        case "connectfailure":
+        case "data backup does not exist. without a data backup, your database cannot be recovered.":
         case "saphostcontrol-db-error": return CRITICAL
         
         default: return UNKNOWN
