@@ -11,7 +11,7 @@ val stackpackName = "sap"
 
 val host = "artifactory.tooling.stackstate.io"
 
-val realm  = "Stackstate Artifactory"
+val realm = "Stackstate Artifactory"
 val fileCredentials = Credentials(Path.userHome / ".sbt" / "stackstate-artifactory.credentials")
 
 val publishRealm = "Artifactory Realm"
@@ -46,11 +46,11 @@ lazy val root = (project in file("."))
           "-Yrangepos"
         ),
         javacOptions ++= Vector("-source", "1.8", "-target", "1.8", "-Xlint:unchecked", "-Xlint:deprecation", "-Werror"),
-        resolvers ++= Vector("Stackstate Artifactory" at "https://artifactory.tooling.stackstate.io/artifactory/libs-release", Resolver.mavenLocal),
+        resolvers ++= Vector("Stackstate Artifactory" at s"https://${host}/artifactory/libs-release", Resolver.mavenLocal),
         coursierUseSbtCredentials := true,
         // Publishing the SAP StackPack is done by the StackState CI/CD pipeline.
-        credentials += getCredentials(realm, fileCredentials),
-        publishTo := Some("Artifactory Realm" at "https://artifactory.tooling.stackstate.io/artifactory/libs"),
+        credentials ++= List(getCredentials(realm, fileCredentials), getCredentials(publishRealm, publishFileCredentials)),
+        publishTo := Some(publishRealm at s"https://${host}/artifactory/libs"),
         // disable publishing the main doc jar
         publishArtifact in (Compile, packageDoc) := false,
         // disable publishing the main sources jar
