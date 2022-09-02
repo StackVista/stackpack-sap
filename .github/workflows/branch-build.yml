@@ -19,6 +19,7 @@ jobs:
         java-version: 1.8
     - name: Compile/Test/Package
       run: |
-        echo "artifactory username : $ARTIFACTORY_USERNAME"
-        echo "tiziano test : $TIZIANO_TEST"
+        [ -z "${ARTIFACTORY_USERNAME}" ] && echo "username doesnt exist"
+        [ -z "${ARTIFACTORY_PASSWORD}" ] && echo "pwd doesnt exist"
+        [ -z "${TIZIANO_TEST}" ] && echo "tiziano doesnt exist"
         sbt compile test package
