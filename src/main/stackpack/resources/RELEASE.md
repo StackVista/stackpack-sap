@@ -1,5 +1,10 @@
 # SAP Release Notes
 
+## [1.3.2](#) (26-09-2022)
+
+**Improvements**
+- Updated documentation
+
 ## [1.3.1](#) (03-04-2021)
 
 **Improvements**
