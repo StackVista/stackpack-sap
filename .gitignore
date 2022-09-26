@@ -3,3 +3,4 @@ project/target/
 sap/target/
 target/
 .idea
+version.sbt-e
