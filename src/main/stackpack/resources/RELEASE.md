@@ -1,6 +1,6 @@
 # SAP Release Notes
 
-## [1.3.2](#) (tbd)
+## [1.3.2](#) (26-09-2022)
 
 **Improvements**
 - Updated documentation
